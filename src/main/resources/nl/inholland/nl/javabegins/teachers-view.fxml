@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="nl.inholland.nl.javabegins.TeachersController"
+      spacing="10" prefWidth="820" prefHeight="480">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <TableView fx:id="teacherTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Username" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="username"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="First name" prefWidth="120">
+                <cellValueFactory>
+                    <PropertyValueFactory property="firstName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Last name" prefWidth="120">
+                <cellValueFactory>
+                    <PropertyValueFactory property="lastName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Birth date" prefWidth="120">
+                <cellValueFactory>
+                    <PropertyValueFactory property="birthDate"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="salaryColumn" text="Salary" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="salary"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <TextField fx:id="usernameField" promptText="Username" prefWidth="100"/>
+        <TextField fx:id="passwordField" promptText="Password" prefWidth="100"/>
+        <TextField fx:id="firstNameField" promptText="First name" prefWidth="100"/>
+        <TextField fx:id="lastNameField" promptText="Last name" prefWidth="100"/>
+        <DatePicker fx:id="birthDatePicker" promptText="Birth date" prefWidth="120"/>
+        <TextField fx:id="salaryField" promptText="Salary" prefWidth="80"/>
+
+        <Button text="Add" fx:id="addButton" onAction="#onAddButtonClick"/>
+        <Button text="Edit" fx:id="editButton" onAction="#onEditButtonClick"/>
+        <Button text="Delete" fx:id="deleteButton" onAction="#onDeleteButtonClick"/>
+    </HBox>
+
+    <Label fx:id="messageLabel"/>
+</VBox>
