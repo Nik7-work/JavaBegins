@@ -8,60 +8,82 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Project Information -->
     <groupId>nl.inholland</groupId>
     <artifactId>JavaBeginsQuiz</artifactId>
     <version>1.0.0</version>
+    <name>Java Fundamentals Quiz Game</name>
 
+    <!-- Java Version -->
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <javafx.version>25</javafx.version>
+        <jackson.version>2.22.2</jackson.version>
     </properties>
 
+    <!-- Dependencies -->
     <dependencies>
 
-        <!-- JavaFX user-interface controls -->
+        <!-- JavaFX Controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>25</version>
+            <version>${javafx.version}</version>
         </dependency>
 
-        <!-- FXML support -->
+        <!-- JavaFX FXML -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>25</version>
+            <version>${javafx.version}</version>
         </dependency>
 
-        <!-- Jackson 2 JSON processing -->
+        <!-- Jackson JSON Library -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.22.2</version>
+            <version>${jackson.version}</version>
         </dependency>
 
     </dependencies>
 
+    <!-- Build Configuration -->
     <build>
+
         <plugins>
 
+            <!-- Maven Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
+
+                <configuration>
+                    <release>25</release>
+                </configuration>
             </plugin>
 
+            <!-- JavaFX Maven Plugin -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
 
                 <configuration>
-                    <mainClass>nl.inholland.quiz.Launcher</mainClass>
+                    <mainClass>
+                        nl.inholland.quiz.Launcher
+                    </mainClass>
+
+                    <options>
+                        <option>--enable-native-access=ALL-UNNAMED</option>
+                    </options>
                 </configuration>
             </plugin>
 
         </plugins>
+
     </build>
 
 </project>

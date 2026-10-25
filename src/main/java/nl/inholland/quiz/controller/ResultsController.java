@@ -1,50 +1,83 @@
 
-<?xml version="1.0" encoding="UTF-8"?>
+package nl.inholland.quiz.controller;
 
-        <?import javafx.scene.layout.VBox?>
-        <?import javafx.scene.layout.HBox?>
-        <?import javafx.scene.control.Label?>
-        <?import javafx.scene.control.Button?>
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-fx:controller="nl.inholland.quiz.controller.MenuController"
-alignment="CENTER"
-spacing="18"
-styleClass="screen">
+import nl.inholland.quiz.QuizApplication;
+import nl.inholland.quiz.data.ResultsRepository;
+import nl.inholland.quiz.game.GameManager;
 
-    <Label text="JAVA FUNDAMENTALS"
-styleClass="eyebrow"/>
+import java.io.IOException;
+import java.nio.file.Path;
 
-    <Label text="Quiz Challenge"
-styleClass="hero"/>
+public final class ResultsController {
 
-    <Label fx:id="titleLabel"
-text="No quiz selected"
-styleClass="heading"
-wrapText="true"/>
+    @FXML
+    private Label summaryLabel;
 
-    <Label fx:id="infoLabel"
-text="Load a JSON quiz to begin."
-wrapText="true"/>
+    @FXML
+    private Label statusLabel;
 
-    <HBox alignment="CENTER"
-spacing="16">
+    private final GameManager game =
+            GameManager.getInstance();
 
-        <Button text="Load quiz"
-onAction="#loadQuiz"
-styleClass="secondary"/>
+    @FXML
+    private void initialize() {
 
-        <Button fx:id="startButton"
-text="Start quiz"
-onAction="#startQuiz"
-styleClass="primary"
-disable="true"/>
+        summaryLabel.setText(
+                game.getPlayerName() +
+                        ", you scored " +
+                        game.getScore() +
+                        " out of " +
+                        game.getTotal() +
+                        " in " +
+                        game.getQuiz().getTitle()
+        );
 
-    </HBox>
+        saveResult();
+    }
 
-    <Label fx:id="statusLabel"
-text="Choose a JSON file using Load quiz."
-wrapText="true"
-styleClass="status"/>
+    private void saveResult() {
 
-</VBox>
+        try {
+            ResultsRepository repository =
+                    new ResultsRepository();
+
+            Path destination = repository.save(
+                    game.getQuiz(),
+                    game.getPlayerName(),
+                    game.getScore(),
+                    Path.of("results")
+            );
+
+            statusLabel.setText(
+                    "Result saved: " +
+                            destination.toAbsolutePath()
+            );
+
+        } catch (IOException exception) {
+
+            statusLabel.setText(
+                    "Result could not be saved: " +
+                            exception.getMessage()
+            );
+        }
+    }
+
+    @FXML
+    private void backToMenu() {
+
+        try {
+            QuizApplication.navigate(
+                    "menu-view.fxml"
+            );
+
+        } catch (IOException exception) {
+
+            statusLabel.setText(
+                    "Could not return to menu."
+            );
+        }
+    }
+}
