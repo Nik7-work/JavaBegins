@@ -1,0 +1,58 @@
+
+{
+  "quizId": "sample001",
+  "title": "Java Fundamentals Quiz",
+  "description": "A quiz about Java programming.",
+  "pages": [
+    {
+      "timeLimit": 20,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q1",
+          "title": "Which company developed Java?",
+          "choices": [
+            "Microsoft",
+            "Sun Microsystems",
+            "Apple",
+            "Google"
+          ],
+          "correctAnswer": "Sun Microsystems",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 15,
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "q2",
+          "title": "Java is an object-oriented programming language.",
+          "labelTrue": "True",
+          "labelFalse": "False",
+          "correctAnswer": true,
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 20,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q3",
+          "title": "Which keyword is used for inheritance in Java?",
+          "choices": [
+            "extends",
+            "inherits",
+            "implements",
+            "super"
+          ],
+          "correctAnswer": "extends",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

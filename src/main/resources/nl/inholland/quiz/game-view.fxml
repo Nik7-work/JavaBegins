@@ -1,0 +1,78 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="nl.inholland.quiz.controller.GameController"
+            styleClass="screen">
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="18">
+
+            <Label fx:id="headingLabel"
+                   text="Question"
+                   styleClass="heading"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="scoreLabel"
+                   text="Score: 0"
+                   styleClass="score"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox alignment="CENTER_LEFT"
+              spacing="16"
+              maxWidth="680">
+
+            <Label fx:id="questionLabel"
+                   text="Question"
+                   styleClass="question"
+                   wrapText="true"/>
+
+            <VBox fx:id="choicesBox"
+                  spacing="13"
+                  fillWidth="true"/>
+
+            <Button text="Submit answer"
+                    onAction="#submitAnswer"
+                    styleClass="primary"/>
+
+            <Label fx:id="statusLabel"
+                   text=""
+                   wrapText="true"
+                   styleClass="status"/>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <VBox spacing="9">
+
+            <Label fx:id="countdownLabel"
+                   text="Countdown"/>
+
+            <ProgressBar fx:id="progressBar"
+                         progress="1.0"
+                         maxWidth="Infinity"/>
+
+        </VBox>
+
+    </bottom>
+
+</BorderPane>

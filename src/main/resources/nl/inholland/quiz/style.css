@@ -1,47 +1,94 @@
 
-.root-container {
-    -fx-background-color: #f4f7fb;
-    -fx-padding: 40;
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
+    -fx-background-color: #f5f7fc;
 }
 
-.title {
-    -fx-font-size: 36px;
+.screen {
+    -fx-padding: 42;
+    -fx-spacing: 20;
+}
+
+.label {
+    -fx-text-fill: #26354b;
+}
+
+.eyebrow {
+    -fx-font-size: 12px;
     -fx-font-weight: bold;
-    -fx-text-fill: #183153;
+    -fx-text-fill: #4276a6;
 }
 
-.subtitle {
-    -fx-font-size: 14px;
+.hero {
+    -fx-font-size: 34px;
     -fx-font-weight: bold;
-    -fx-text-fill: #4477aa;
+    -fx-text-fill: #142d52;
 }
 
-.description {
-    -fx-font-size: 16px;
-    -fx-text-fill: #526579;
+.heading {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.question {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.score {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #166a75;
+}
+
+.status {
+    -fx-font-size: 13px;
+    -fx-text-fill: #51627b;
 }
 
 .button {
-    -fx-background-radius: 8;
-    -fx-padding: 12 25;
-    -fx-font-size: 14px;
     -fx-cursor: hand;
+    -fx-background-radius: 8;
+    -fx-padding: 11 20;
+    -fx-font-weight: bold;
 }
 
-.primary-button {
-    -fx-background-color: #2563eb;
+.primary {
+    -fx-background-color: #235e9b;
     -fx-text-fill: white;
 }
 
-.primary-button:hover {
-    -fx-background-color: #1d4ed8;
+.primary:hover {
+    -fx-background-color: #184b7d;
 }
 
-.secondary-button {
-    -fx-background-color: #dbeafe;
-    -fx-text-fill: #1e40af;
+.secondary {
+    -fx-background-color: #e0eafa;
+    -fx-text-fill: #1c4673;
+}
+
+.secondary:hover {
+    -fx-background-color: #cddff7;
 }
 
 .button:disabled {
-    -fx-opacity: 0.5;
+    -fx-opacity: 0.45;
+}
+
+.answer-choice {
+    -fx-padding: 12;
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #d5dfec;
+}
+
+.answer-choice:selected {
+    -fx-border-color: #235e9b;
+}
+
+.progress-bar {
+    -fx-pref-height: 14;
+    -fx-accent: #277ba2;
 }
