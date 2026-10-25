@@ -11,6 +11,9 @@ import java.io.IOException;
 
 public final class QuizApplication extends Application {
 
+
+
+
     private static Stage stage;
 
     @Override
