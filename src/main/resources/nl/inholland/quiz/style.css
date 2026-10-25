@@ -1,0 +1,47 @@
+
+.root-container {
+    -fx-background-color: #f4f7fb;
+    -fx-padding: 40;
+}
+
+.title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #183153;
+}
+
+.subtitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4477aa;
+}
+
+.description {
+    -fx-font-size: 16px;
+    -fx-text-fill: #526579;
+}
+
+.button {
+    -fx-background-radius: 8;
+    -fx-padding: 12 25;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.secondary-button {
+    -fx-background-color: #dbeafe;
+    -fx-text-fill: #1e40af;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}

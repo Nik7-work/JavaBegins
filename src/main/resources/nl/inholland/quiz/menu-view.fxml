@@ -1,0 +1,32 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER"
+      spacing="20"
+      styleClass="root-container">
+
+    <Label text="JAVA FUNDAMENTALS"
+           styleClass="subtitle"/>
+
+    <Label text="Quiz Game"
+           styleClass="title"/>
+
+    <Label text="Welcome to the Java Quiz Game!"
+           styleClass="description"/>
+
+    <Label text="Load a quiz to begin playing."
+           styleClass="description"/>
+
+    <Button text="Load Quiz"
+            disable="true"
+            styleClass="primary-button"/>
+
+    <Button text="Start Quiz"
+            disable="true"
+            styleClass="secondary-button"/>
+
+</VBox>
