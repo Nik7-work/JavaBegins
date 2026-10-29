@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz;
 
 public class Launcher {

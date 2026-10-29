@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz.data;
 
 import com.fasterxml.jackson.databind.JsonNode;

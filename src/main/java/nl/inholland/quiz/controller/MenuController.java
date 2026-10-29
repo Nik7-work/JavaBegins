@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz.controller;
 
 import javafx.fxml.FXML;

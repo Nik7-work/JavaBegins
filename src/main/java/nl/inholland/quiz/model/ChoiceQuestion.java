@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz.model;
 
 import java.util.List;

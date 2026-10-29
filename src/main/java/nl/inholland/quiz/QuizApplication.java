@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz;
 
 import javafx.application.Application;
@@ -10,9 +9,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public final class QuizApplication extends Application {
-
-
-
 
     private static Stage stage;
 
