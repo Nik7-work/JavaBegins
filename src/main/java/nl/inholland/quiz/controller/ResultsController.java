@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz.controller;
 
 import javafx.fxml.FXML;
@@ -25,6 +24,21 @@ public final class ResultsController {
     @FXML
     private void initialize() {
 
+        if (!game.isFinished() ||
+                game.getQuiz() == null ||
+                game.getPlayerName() == null) {
+
+            summaryLabel.setText(
+                    "No completed quiz result is available."
+            );
+
+            statusLabel.setText(
+                    "Please complete a quiz first."
+            );
+
+            return;
+        }
+
         summaryLabel.setText(
                 game.getPlayerName() +
                         ", you scored " +
@@ -40,7 +54,17 @@ public final class ResultsController {
 
     private void saveResult() {
 
+        if (game.isResultSaved()) {
+
+            statusLabel.setText(
+                    "This quiz result has already been saved."
+            );
+
+            return;
+        }
+
         try {
+
             ResultsRepository repository =
                     new ResultsRepository();
 
@@ -50,6 +74,9 @@ public final class ResultsController {
                     game.getScore(),
                     Path.of("results")
             );
+
+            // Mark as saved only after a successful write.
+            game.markResultSaved();
 
             statusLabel.setText(
                     "Result saved: " +
@@ -69,6 +96,7 @@ public final class ResultsController {
     private void backToMenu() {
 
         try {
+
             QuizApplication.navigate(
                     "menu-view.fxml"
             );

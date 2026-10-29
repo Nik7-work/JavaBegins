@@ -1,4 +1,3 @@
-
 package nl.inholland.quiz.game;
 
 import javafx.beans.property.IntegerProperty;
@@ -18,6 +17,7 @@ public final class GameManager {
 
     private int index;
     private boolean finished;
+    private boolean resultSaved;
 
     private final IntegerProperty score =
             new SimpleIntegerProperty(0);
@@ -31,11 +31,18 @@ public final class GameManager {
 
     public void setQuiz(Quiz quiz) {
 
+        if (quiz == null) {
+            throw new IllegalArgumentException(
+                    "Quiz cannot be null."
+            );
+        }
+
         this.quiz = quiz;
         this.playerName = null;
 
-        this.index = 0;
-        this.finished = false;
+        index = 0;
+        finished = false;
+        resultSaved = false;
 
         score.set(0);
     }
@@ -73,6 +80,7 @@ public final class GameManager {
 
         index = 0;
         finished = false;
+        resultSaved = false;
 
         score.set(0);
     }
@@ -116,6 +124,21 @@ public final class GameManager {
 
     public boolean isFinished() {
         return finished;
+    }
+
+    public boolean isResultSaved() {
+        return resultSaved;
+    }
+
+    public void markResultSaved() {
+
+        if (!finished) {
+            throw new IllegalStateException(
+                    "Cannot mark an unfinished quiz as saved."
+            );
+        }
+
+        resultSaved = true;
     }
 
     public int getScore() {
