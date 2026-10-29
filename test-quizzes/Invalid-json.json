@@ -1,0 +1,16 @@
+
+{
+  "quizId": "broken001",
+  "title": "Broken Quiz",
+  "pages": [
+    {
+      "timeLimit": 20,
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "q1",
+          "title": "Java is object-oriented.",
+          "correctAnswer": true
+        }
+      ]
+    }
