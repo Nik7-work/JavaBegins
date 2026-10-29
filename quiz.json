@@ -1,0 +1,148 @@
+{
+  "quizId": "quiz001",
+  "title": "Java Fundamentals Quiz",
+  "description": "Ten questions on the Java you meet in this unit.",
+  "pages": [
+    {
+      "timeLimit": 20,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q1",
+          "title": "Which company originally developed Java?",
+          "choicesOrder": "random",
+          "choices": ["Microsoft", "Sun Microsystems", "Apple", "Google"],
+          "correctAnswer": "Sun Microsystems",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 15,
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "q2",
+          "title": "Java is a statically typed programming language.",
+          "labelTrue": "True",
+          "labelFalse": "False",
+          "correctAnswer": true,
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 20,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q3",
+          "title": "Which keyword makes one class inherit from another?",
+          "choicesOrder": "random",
+          "choices": ["inherits", "extends", "implements", "super"],
+          "correctAnswer": "extends",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 25,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q4",
+          "title": "Which collection allows duplicate elements and keeps insertion order?",
+          "choicesOrder": "random",
+          "choices": ["HashSet", "TreeSet", "ArrayList", "HashMap"],
+          "correctAnswer": "ArrayList",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 15,
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "q5",
+          "title": "An abstract class in Java can have a constructor.",
+          "labelTrue": "True",
+          "labelFalse": "False",
+          "correctAnswer": true,
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 25,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q6",
+          "title": "Which interface do you implement to define a class's natural ordering?",
+          "choicesOrder": "random",
+          "choices": ["Comparator", "Comparable", "Iterable", "Sortable"],
+          "correctAnswer": "Comparable",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 25,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q7",
+          "title": "In JavaFX, which class is the top-level window of an application?",
+          "choicesOrder": "random",
+          "choices": ["Scene", "Stage", "Pane", "Window"],
+          "correctAnswer": "Stage",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 15,
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "q8",
+          "title": "A checked exception must be caught or declared with throws.",
+          "labelTrue": "True",
+          "labelFalse": "False",
+          "correctAnswer": true,
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 25,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q9",
+          "title": "Which pattern guarantees that a class has exactly one instance?",
+          "choicesOrder": "random",
+          "choices": ["Factory", "Observer", "Singleton", "State"],
+          "correctAnswer": "Singleton",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "timeLimit": 20,
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q10",
+          "title": "Which statement closes a resource automatically when the block ends?",
+          "choicesOrder": "random",
+          "choices": ["try-with-resources", "try-finally", "auto-close", "using"],
+          "correctAnswer": "try-with-resources",
+          "isRequired": true
+        }
+      ]
+    }
+  ],
+  "completedHtml": "<h4>You got <b>{correctAnswers}</b> out of <b>{questionCount}</b> correct.</h4>"
+}
