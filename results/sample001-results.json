@@ -1,0 +1,15 @@
+{
+  "quizId" : "sample001",
+  "name" : "Java Fundamentals Quiz",
+  "results" : [ {
+    "playerName" : "niks",
+    "totalQuestions" : 3,
+    "correctQuestions" : 0,
+    "date" : "2026-10-25T18:24:47.628140500Z"
+  }, {
+    "playerName" : "sdada",
+    "totalQuestions" : 3,
+    "correctQuestions" : 1,
+    "date" : "2026-10-25T18:25:00.657742Z"
+  } ]
+}
